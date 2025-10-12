@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&OP Academy Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Global */
+
+    :root {
+    --dark-bg: #121212; /* Example dark background */
+    --text-color: #FFFFFF;
+    --pink-highlight: #fab3db; /* Example vibrant pink */
+    --green-smiley: #caf291; /* Example green for smiley */
+    --btn-bg: #dac7f9; /* Example button background */
+    --btn-text: #1A1A1A;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from absolute positioning */
+    text-align: center; /* center content */
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #fab3db; 
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 200;
+    color:  black; 
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: "Luckiest Guy", cursive;
+}
+
+.glow {
+  background: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
+  font-weight: 200;
+}
+ 
+.mobile-toggle {
+    display: none;
+    font-size: 28px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 1.2rem;
+}
+
+.main-nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 8px;
+}
+
+.main-nav ul li a:hover {
+  color:#fcb3d4;
+  background-color: #121212;
+}
+
+.notification {
+    background-color: var(--pink-highlight);
+    color: var(--text-color);
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: black;
+    color: var(--pink-highlight);
+    border: none;
+    box-shadow: #ba0e72;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+}
+
+a.back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #52cc85;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 4rem;
+      margin-top: 2rem;
+    }
+
+    h1 {
+      font-weight: 900;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      margin-top: 0rem;
+    }
+
+    img {
+      width: 84%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(250, 179, 219, 0.4);
+      /* background: #fab3db; */
+      display: inline-block;
+    }
+
+    .case-study {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      text-align: left; /* center content */
+
+    }
+
+    .section {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      border-bottom: 1px solid white;
+      padding-bottom: 50px;
+    }
+
+    .section-heading {
+      flex: 0 0 40%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #52cc85;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding-left: 20px;
+    }
+
+    .section-content {
+      flex: 0 0 60%;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #d0d0d0;
+      max-width: 600px;
+    }
+
+    strong {
+      color: #d0d0d0;
+      font-weight: 600;
+    }
+
+  .project-intro {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 20px 20px;
+  background-color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  color: #f0f0f0;
+}
+
+.intro-left {
+  flex: 0 0 60%;
+}
+
+.intro-left h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.intro-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #d0d0d0;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #52cc85; /* neon green like example */
+  color: #121212;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #2dbd69;
+  transform: scale(1.05);
+}
+
+.intro-right {
+  flex: 0 0 40%;
+  border-left: 1px solid white;
+  padding-left: 30px; /* adds spacing so text doesn’t stick to the border */
+  padding-bottom: 40px;
+}
+
+.intro-right h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  color: #52cc85;
+}
+
+.intro-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.intro-right li {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: #d0d0d0;
+}
+
+.project-showcase {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 columns */
+  gap: 15px !important;
+  width: 100%;
+}
+
+.project-showcase img {
+  width: 100%;
+  height: 100%;         /* keep natural aspect ratio */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* .project-showcase img:nth-child(1),
+.project-showcase img:nth-child(2) {
+  grid-column: span 3;
+}
+
+.project-showcase img:nth-child(3),
+.project-showcase img:nth-child(4),
+.project-showcase img:nth-child(5) {
+  grid-column: span 2;
+} */
+
+/* Lightbox (full-screen overlay) */
+.lightbox {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.9); /* dark blurred overlay */
+  backdrop-filter: blur(6px);
+}
+
+/* Lightbox image */
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;     /* give more breathing room */
+  max-height: 90vh;   /* full viewport height */
+  object-fit: contain; /* 🔑 keeps full image visible */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+
+/* Close button */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  left: 35px; /* top left corner */
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Next & Previous arrows */
+.lightbox .prev,
+.lightbox .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover,
+.lightbox .close:hover {
+  color: #52cc85; /* your pink highlight */
+}
+
+.tech-stack {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: #90deb1;   /* matches dark theme */
+  color: black;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  border-radius: 9999px; /* full pill */
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease-in-out;
+}
+
+.pill:hover {
+  background: #52cc85;   /* subtle highlight (you can pick brand color) */
+  color: #121212;
+  border-color: #52cc85;
+}
+
+.main-footer {
+    background-color: #fab3db;
+    padding: 2rem 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .main-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  /* Logo on left */
+  .main-footer .footer-left .logo a {
+    font-size: 24px;
+    font-weight: 200;
+    color: black;
+    text-decoration: none;
+    font-family: "Luckiest Guy", cursive;
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  /* Social icons below logo */
+  .footer-socials {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-socials a {
+    color: black;
+    font-size: 22px;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-socials a:hover {
+    color: #121212;
+    transform: scale(1.2);
+  }
+  
+  
+  /* Navigation on right */
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .footer-nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    background-color: #121212;
+    color: #fab3db;
+  }
+
+
+
+@media (max-width: 900px) {
+  .project-intro {
+    flex-direction: column;
+  }
+  .intro-left, .intro-right {
+    flex: 100%;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .section-heading, .section-content {
+        flex: 100%;
+      }
+    }
+
+  </style>
+</head>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+        <div class="logo glow">
+            <a href="../index.html">ARSHIA SANDHU</a>
+        </div>
+        <nav class="main-nav">
+            <div class="mobile-toggle">&#9776;</div> 
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#skills">SKILLS</a></li>
+                <li><a href="../index.html#experience">EXPERIENCE</a></li>
+                <li><a href="../index.html#certificates">CERTIFICATES</a></li>
+                <li><a href="../index.html#projects">PROJECTS</a></li>
+                <li><a href="../index.html#blogs">BLOG</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-primary">LET'S TALK</a>
+        </div>
+    </div>
+</header>
+
+<div style="text-align: left;">
+  <a href="../index.html" class="back-link">&larr; Back to Home</a>
+</div>
+
+<div class="cover">
+<h1>S&OP ACADEMY</h1>
+</div>
+
+<div>
+<img src="../images/DBM LMS - Banner.png" alt="Pendoraaz - Project Cover">
+</div>
+
+<div class="case-study">
+    
+    <section class="project-intro">
+        <div class="intro-left">
+          <h1>S&OP ACADEMY</h1>
+          <p>
+            At DBM Systems, I was responsible for building and managing a 
+            <strong>Learning Management System (LMS)</strong> to streamline 
+            <strong>onboarding, training, product tutorials, and documentation</strong> 
+            for clients. 
+          </p>
+          <p>
+            The project involved migrating from <strong>SharePoint</strong> to 
+            <strong>Thinkific</strong>, creating a more structured, scalable, and 
+            user-friendly training hub. I set up course modules, access controls, 
+            video content, and interactive quizzes to provide an engaging learning 
+            experience.
+          </p>
+          <a href="#" class="cta-btn" target="_blank">View Case Study &#8594; </a>
+        </div>
+      
+        <div class="intro-right">
+          <h3>📌 Project Highlights</h3>
+          <ul>
+            <li>Migrated LMS from <strong>SharePoint → Thinkific</strong></li>
+            <li>Created structured <strong>modules & video tutorials</strong></li>
+            <li>Integrated <strong>quizzes</strong> to enhance learning</li>
+            <li>Configured <strong>user access & permissions</strong></li>
+            <li>Reduced client <strong>onboarding time by 15%</strong></li>
+          </ul>
+      
+          <!-- 🔖 Pill Tags for Tech Stack -->
+          <div class="tech-stack">
+            <span class="pill">Thinkific</span>
+            <span class="pill">SharePoint</span>
+            <span class="pill">LMS</span>
+            <span class="pill">Quizzes</span>
+            <span class="pill">Video Integration</span>
+            <span class="pill">Content Strategy</span>
+          </div>
+        </div>
+      </section>  
+      
+      <div class="section">
+        <div class="section-heading">⚡ The Challenge</div>
+        <div class="section-content">
+          <p>DBM Systems needed a professional training solution that could serve 
+            multiple purposes: onboarding, tutorials, documentation, and client training. 
+            <br><br> Key challenges included:</p>
+          <ul>
+            <li>Existing setup on <strong>SharePoint was limited</strong> and not scalable.</li>
+            <li>Need for <strong>structured courses & interactive learning</strong>.</li>
+            <li>Required <strong>role-based access control</strong> for different client groups.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="section-heading">🔍 Research & Insights</div>
+        <div class="section-content">
+          <p>We identified that clients were spending extra time navigating 
+            scattered training resources. <br><br> The solution required:</p>
+          <ul>
+            <li>A modern LMS platform to replace SharePoint.</li>
+            <li>Clear course structures for easy navigation.</li>
+            <li>Engagement through <strong>quizzes and videos</strong>.</li>
+            <li>Scalable setup to onboard multiple clients efficiently.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="section-heading">🛠️ Process</div>
+        <div class="section-content">
+          <p><strong>Migration:</strong> Transitioned training content from SharePoint to Thinkific.<br><br>
+             <strong>Design:</strong> Created structured course modules with tutorials, guides, and quizzes.<br><br>
+             <strong>Configuration:</strong> Set up user roles, permissions, and course access settings.<br><br>
+             <strong>Testing:</strong> Validated course flow and optimized for smooth learner experience.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="section-heading">✨ Solution</div>
+        <div class="section-content">
+          <p>The final LMS provided DBM Systems with:</p>
+          <ul>
+            <li>Structured training modules with <strong>interactive quizzes</strong>.</li>
+            <li>Video tutorials and supporting documentation.</li>
+            <li><strong>Role-based access</strong> for different client groups.</li>
+            <li>A scalable foundation for ongoing training and onboarding.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="section-heading">📈 Impact & Results</div>
+        <div class="section-content">
+          <p>The new LMS <strong>reduced onboarding time by 15%</strong>, improved 
+            training consistency, and helped clients adopt DBM Systems’ solutions 
+            faster. The structured learning experience made tutorials and documentation 
+            far easier to follow.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="section-heading">💭 Reflection</div>
+        <div class="section-content">
+          <p>This project helped me strengthen skills in <strong>LMS migration</strong>, 
+            <strong>content structuring</strong>, and <strong>user access management</strong>. 
+            I also gained valuable experience in designing training experiences that 
+            balance <strong>technical detail with user-friendliness</strong>.</p>
+        </div>
+      </div>
+      
+  
+    <div class="project-showcase">
+      <img src="../images/S&OP1.png" alt="S&OP Academy - Project Screenshot">
+      <img src="../images/S&OP2.png" alt="S&OP Academy - Project Screenshot">
+      <img src="../images/S&OP3.png" alt="S&OP Academy - Project Screenshot">
+      <img src="../images/S&OP4.png" alt="S&OP Academy - Project Screenshot">
+      <img src="../images/S&OP5.png" alt="S&OP Academy - Project Screenshot">
+      <img src="../images/S&OP6.png" alt="S&OP Academy - Project Screenshot">
+    
+    </div>
+  
+  </div>
+
+  <footer class="main-footer">
+    <div class="container">
+      <!-- Left side: Logo + Social Icons -->
+      <div class="footer-left">
+        <div class="logo glow">
+          <a href="#">ARSHIA SANDHU</a>
+        </div>
+        <div class="footer-socials">
+          <a href="mailto:arshiasandhu07@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+15197601087" target="_blank"><i class="fas fa-phone"></i></a>
+          <a href="https://www.linkedin.com/in/arshiasandhu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/arshiaaaa" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.behance.net/arshiasandhu" target="_blank"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+  
+      <!-- Right side: Navigation Links -->
+      <div class="footer-nav">
+        <a href="../index.html">HOME</a>
+        <a href="../index.html#skills">SKILLS</a>
+        <a href="../index.html#experience">EXPERIENCE</a>
+        <a href="../index.html#certificates">CERTIFICATES</a>
+        <a href="../index.html#projects">PROJECTS</a>
+        <a href="../index.html#blogs">BLOG</a>
+      </div>
+    </div>
+  </footer>
+    
+  <script>
+     // Lightbox Script
+const images = document.querySelectorAll('.project-showcase img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+const prevBtn = document.querySelector('.lightbox .prev');
+const nextBtn = document.querySelector('.lightbox .next');
+
+let currentIndex = 0;
+
+// Open lightbox
+images.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = "block";
+    lightboxImg.src = img.src;
+    currentIndex = index;
+  });
+});
+
+// Close lightbox (cross or outside click)
+closeBtn.addEventListener('click', () => lightbox.style.display = "none");
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) lightbox.style.display = "none";
+});
+
+// Navigate
+function showImage(index) {
+  if (index >= images.length) currentIndex = 0;
+  if (index < 0) currentIndex = images.length - 1;
+  lightboxImg.src = images[currentIndex].src;
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  showImage(currentIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  showImage(currentIndex);
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display === "block") {
+    if (e.key === "ArrowRight") { currentIndex++; showImage(currentIndex); }
+    if (e.key === "ArrowLeft") { currentIndex--; showImage(currentIndex); }
+    if (e.key === "Escape") { lightbox.style.display = "none"; }
+  }
+});
+
+  </script>
+  
+</body>
+</html>
