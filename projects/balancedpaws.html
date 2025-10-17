@@ -323,24 +323,15 @@ a.back-link {
     } 
 
     .section-content {
-      flex: 1 1 65%;
-      font-size: clamp(0.9rem, 2vw, 1rem);
+      flex: 0 0 60%;
+      font-size: 1rem;
       font-weight: 300;
       color: #d0d0d0;
-      line-height: 1.7;
-    }
-
-    .section-content ul {
-      margin-top: 15px;
-      padding-left: 20px;
-    }
-
-    .section-content li {
-      margin-bottom: 10px;
+      max-width: 600px;
     }
 
     strong {
-      color: #ffffff;
+      color: #d0d0d0;
       font-weight: 600;
     }
 
@@ -455,384 +446,90 @@ a.back-link {
   color: #a9a8db; /* your pink highlight */
 }
 
-/* Footer */
 .main-footer {
-      background-color: #fedeed;
-      padding: 2rem 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      width: 100%;
+    background-color: #fab3db;
+    padding: 2rem 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .main-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  /* Logo on left */
+  .main-footer .footer-left .logo a {
+    font-size: 24px;
+    font-weight: 200;
+    color: black;
+    text-decoration: none;
+    font-family: "Luckiest Guy", cursive;
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  /* Social icons below logo */
+  .footer-socials {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-socials a {
+    color: black;
+    font-size: 22px;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-socials a:hover {
+    color: #121212;
+    transform: scale(1.2);
+  }
+  
+  
+  /* Navigation on right */
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .footer-nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    background-color: #121212;
+    color: #fab3db;
+  }
+
+
+@media (max-width: 900px) {
+  .project-intro {
+    flex-direction: column;
+  }
+  .intro-left, .intro-right {
+    flex: 100%;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .section-heading, .section-content {
+        flex: 100%;
+      }
     }
-
-    .main-footer .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 30px;
-    }
-
-    .main-footer .footer-left .logo a {
-      font-size: 24px;
-      font-weight: 200;
-      color: black;
-      text-decoration: none;
-      font-family: "Luckiest Guy", cursive;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .footer-socials {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-socials a {
-      color: black;
-      font-size: 22px;
-      transition: all 0.3s ease;
-    }
-
-    .footer-socials a:hover {
-      color: #fab3db;
-      transform: scale(1.2);
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .footer-nav a {
-      color: black;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 8px 12px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-
-    .footer-nav a:hover {
-      background-color: #121212;
-      color: #fab3db;
-    }
-
-
-  @media (max-width: 1100px) {
-
-.logo a {
-  font-size: 24px;
-}
-
-.header-actions .btn {
-  padding: 8px 16px;
-  font-size: 14px;
-}
-}
-
-/* Tablet Styles */
-@media (max-width: 1024px) {
-.main-header .container {
-  padding: 0 15px;
-}
-
-.project-intro {
-  gap: 30px;
-}
-
-.intro-right {
-  padding-left: 20px;
-}
-
-.section {
-  gap: 30px;
-  padding: 0 15px 40px;
-}
-
-.section-heading {
-  flex: 0 0 40%;
-}
-}
-
-/* Mobile Navigation */
-@media (max-width: 1036px) {
-.mobile-toggle {
-  display: block;
-  /* position: absolute; */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1002;
-}
-
-.main-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-}
-
-.main-nav ul {
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-right: 0;
-background-color: #fab3db;
-flex-direction: column;
-padding: 20px;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.main-nav ul.active {
-  display: flex;
-}
-
-.main-nav ul li {
-  margin: 0 0 10px 0;
-  width: 100%;
-}
-
-.main-nav ul li a {
-  display: block;
-  padding: 12px 16px;
-  font-size: 1rem;
-  color: black;
-}
-
-.main-nav ul li a:hover {
-  background-color: #121212;
-  color: #fab3db;
-}
-
-.header-actions .btn {
-  padding: 8px 16px;
-  font-size: 13px;
-}
-
-/* Project Intro becomes stacked */
-.project-intro {
-  flex-direction: column;
-  padding: 20px 15px;
-}
-
-.intro-left,
-.intro-right {
-  flex: 1 1 100%;
-}
-
-.intro-right {
-  border-left: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-left: 0;
-  padding-top: 30px;
-  margin-top: 20px;
-}
-
-.intro-right h3 {
-  margin-top: 0;
-}
-
-/* Sections stack vertically */
-.section {
-  flex-direction: column;
-  gap: 20px;
-  padding: 0 15px 40px;
-}
-
-.section-heading {
-  flex: 1 1 100%;
-}
-
-.section-content {
-  flex: 1 1 100%;
-}
-
-/* Project showcase adjusts */
-.project-showcase {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 0 15px;
-}
-
-.project-showcase img:nth-child(1),
-.project-showcase img:nth-child(2) {
-  grid-column: span 2;
-}
-
-.project-showcase img:nth-child(3),
-.project-showcase img:nth-child(4),
-.project-showcase img:nth-child(5) {
-  grid-column: span 1;
-}
-
-/* Lightbox adjustments */
-.lightbox .close {
-  top: 10px;
-  left: 15px;
-  font-size: 35px;
-}
-
-.lightbox .prev,
-.lightbox .next {
-  font-size: 30px;
-  padding: 10px;
-}
-
-.lightbox .prev {
-  left: 10px;
-}
-
-.lightbox .next {
-  right: 10px;
-}
-}
-
-@media (max-width: 992px) {
-.mobile-toggle {
-  display: block;
-}
-
-.main-nav ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #fab3db;
-  flex-direction: column;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.main-nav ul.active {
-  display: flex;
-}
-
-.main-nav ul li {
-  margin: 10px 0;
-  margin-left: 0;
-}
-
-.main-nav ul li a {
-  display: block;
-  padding: 12px 16px;
-  font-size: 1rem;
-} 
-}
-
-
-/* Small Mobile Styles */
-@media (max-width: 600px) {
-.logo a {
-  font-size: 20px;
-}
-
-.header-actions .btn {
-  padding: 8px 14px;
-  font-size: 12px;
-}
-
-a.back-link {
-  margin-left: 1rem;
-  font-size: 0.9rem;
-}
-
-.cover h1 {
-  margin: 0.5rem 0;
-}
-
-.cover img {
-  width: 95%;
-  margin: 1.5rem auto;
-}
-
-.case-study {
-  padding: 30px 10px 50px;
-  gap: 40px;
-}
-
-.project-intro {
-  padding: 15px 10px;
-}
-
-.cta-btn {
-  padding: 12px 24px;
-  width: 100%;
-  text-align: center;
-}
-
-.section {
-  padding: 0 10px 30px;
-}
-
-.tech-stack {
-  gap: 6px;
-}
-
-.pill {
-  padding: 5px 10px;
-}
-
-.project-showcase {
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 0 10px;
-}
-
-.project-showcase img:nth-child(1),
-.project-showcase img:nth-child(2),
-.project-showcase img:nth-child(3),
-.project-showcase img:nth-child(4),
-.project-showcase img:nth-child(5) {
-  grid-column: span 1;
-}
-
-/* Footer */
-.main-footer .container {
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer-socials {
-  justify-content: center;
-}
-
-.footer-nav {
-  justify-content: center;
-  gap: 10px;
-}
-
-.footer-nav a {
-  font-size: 0.85rem;
-  padding: 6px 10px;
-}
-}
-
-@media (max-width: 400px) {
-.lightbox .close {
-  font-size: 30px;
-  top: 5px;
-  left: 10px;
-}
-
-.lightbox .prev,
-.lightbox .next {
-  font-size: 25px;
-  padding: 8px;
-}
-}
 
   </style>
 </head>
@@ -894,7 +591,7 @@ a.back-link {
             a free, open-access website</strong>, making science-driven pet nutrition 
             accessible to everyone.  
           </p>
-          <a href="#" class="cta-btn" target="_blank">View Prototype &#8594; </a>
+          <a href="#prototype" class="cta-btn" target="_blank">View Prototype &#8594; </a>
         </div>
       
         <div class="intro-right">
@@ -997,7 +694,7 @@ a.back-link {
         </div>
       </div>      
       
-      <div class="project-showcase">  
+      <div class="project-showcase" id="prototype">  
         <!-- First row -->
         <a href="../images/balanced1.png" data-type="image">
           <img src="../images/balanced1.png" alt="BalancePaws Screenshot">
