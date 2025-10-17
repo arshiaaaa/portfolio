@@ -1120,53 +1120,12 @@ border-top: 1px solid rgba(0,0,0,0.05);
 
 /* ====== RESPONSIVE BREAKPOINTS ====== */
 
-/* Large tablets and small desktops (1024px and below) */
-/* @media (max-width: 12726px) {
-
-  .floating-icon {
-    display: none; 
-    width: 70px;
-    height: 70px;
-  } 
-
-  
-/* .container {
-  padding: 0 30px;
-}
-.hero-title {
-  font-size: 60px;
-}
-
-.hero-profile-image img {
-  width: 320px;
-}
-
-.about-paragraph {
-  margin-left: 50px;
-}
-
-.certificates-section {
-  padding: 40px 60px;
-}
-
-.services-section {
-  padding: 60px 20px;
-}
-
-.floating-icon {
-  width: 80px;
-  height: 80px;
-} */
-/* }  */
-
-/* Tablets (1024px and below) */
 @media (max-width: 1378px) {
 .container {
   padding: 0 20px;
 }
 
 .floating-icon {
-  /* display: none; */
   width: 70px;
   height: 70px;
 }
@@ -1190,38 +1149,6 @@ border-top: 1px solid rgba(0,0,0,0.05);
 
 }
 @media (max-width: 1100px) {
-
-/* Header */
-/* .mobile-toggle {
-  display: block;
-}
-
-.main-nav ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #fab3db;
-  flex-direction: column;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.main-nav ul.active {
-  display: flex;
-}
-
-.main-nav ul li {
-  margin: 10px 0;
-  margin-left: 0;
-}
-
-.main-nav ul li a {
-  display: block;
-  padding: 12px 16px;
-  font-size: 1rem;
-} */
 
 .logo a {
   font-size: 24px;

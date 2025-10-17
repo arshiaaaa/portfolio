@@ -45,97 +45,124 @@
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
 
-    /* Header Styling */
-    .main-header {
-      background-color: #fedeed;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* Header Styling */
+.main-header {
+background-color: #fedeed; 
+padding: 8px 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    .main-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.main-header .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-    .logo a {
-      font-size: 24px;
-      font-weight: 200;
-      color: black;
-      text-decoration: none;
-      letter-spacing: 1px;
-      font-family: "Luckiest Guy", cursive;
-    }
+.logo a {
+font-size: 28px;
+font-weight: 200;
+color: black; 
+text-decoration: none;
+letter-spacing: 1px;
+font-family: "Luckiest Guy", cursive;
+}
 
-    .mobile-toggle {
+.glow {
+background: black;
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+color: transparent; 
+font-weight: 200;
+padding-top: 8px;
+}
+
+.mobile-toggle {
 display: none;
 font-size: 28px;
 color: black;
 cursor: pointer;
 background: none;
 border: none;
-padding: 5px;
+padding-bottom: 5px;
 }
 
-    .main-nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-    }
+.navbar {
+position: sticky;
+top: 0;
+z-index: 1000;
+}
 
-    .main-nav ul li {
-      margin-left: 1.2rem;
-    }
+.main-nav ul {
+list-style: none;
+display: flex;
+}
 
-    .main-nav ul li a {
-      color: black;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      padding: 8px 12px;
-      border-radius: 10px;
-      display: block;
-    }
+.main-nav ul li {
+margin-left: 1.2rem;
+}
 
-    .main-nav ul li a:hover {
-      background-color: #121212;
-      color: #fab3db;
-    }
+.main-nav ul li a {
+color: black;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.9rem;
+transition: color 0.3s ease;
+position: relative;
+padding: 8px;
+}
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.main-nav ul li a:hover {
+background-color: #121212;
+color:#fab3db;
+border-radius: 10px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
+.notification {
+background-color: var(--pink-highlight);
+color: var(--text-color);
+font-size: 10px;
+padding: 2px 5px;
+border-radius: 50%;
+position: absolute;
+top: -5px;
+right: -10px;
+}
 
-    .btn-primary {
-      background-color: black;
-      color: #fab3db;
-      border: none;
-    }
+.header-actions {
+display: flex;
+align-items: center;
+gap: 15px;
+}
 
-    .btn-primary:hover {
-      transform: scale(1.05);
-    }
+.btn {
+display: inline-block;
+padding: 12px 25px;
+border-radius: 20px;
+text-decoration: none;
+font-weight: bold;
+font-size: 15px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+padding-top: 8px;
+background-color: black;
+color: #fab3db;
+border: none;
+box-shadow: #ba0e72;
+}
+
+.btn-primary:hover {
+transform: scale(1.02);
+/* background-color: #fab3db;
+color: black; */
+}
 
     a.back-link {
       display: inline-block;
@@ -480,6 +507,18 @@ padding: 5px;
       color: #fab3db;
     }
 
+    @media (max-width: 1100px) {
+
+      .logo a {
+        font-size: 24px;
+      }
+
+      .header-actions .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+
     /* Tablet Styles */
     @media (max-width: 1024px) {
       .main-header .container {
@@ -638,6 +677,40 @@ padding: 5px;
       }
     }
 
+    @media (max-width: 992px) {
+      .mobile-toggle {
+        display: block;
+      }
+
+      .main-nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fab3db;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .main-nav ul.active {
+        display: flex;
+      }
+
+      .main-nav ul li {
+        margin: 10px 0;
+        margin-left: 0;
+      }
+
+      .main-nav ul li a {
+        display: block;
+        padding: 12px 16px;
+        font-size: 1rem;
+      } 
+    }
+    
+
     /* Small Mobile Styles */
     @media (max-width: 600px) {
       .logo a {
@@ -758,27 +831,27 @@ padding: 5px;
     <a class="next">&#10095;</a>
   </div>
 
-  <header class="main-header">
+  <header class="navbar main-header">
     <div class="container">
-      <div class="logo">
-        <a href="../index.html">ARSHIA SANDHU</a>
-      </div>
-      <nav class="main-nav">
-        <button class="mobile-toggle" aria-label="Toggle menu">&#9776;</button>
-        <ul>
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../index.html#skills">SKILLS</a></li>
-          <li><a href="../index.html#experience">EXPERIENCE</a></li>
-          <li><a href="../index.html#certificates">CERTIFICATES</a></li>
-          <li><a href="../index.html#projects">PROJECTS</a></li>
-          <li><a href="../index.html#blogs">BLOG</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <a href="../index.html#contact" class="btn btn-primary">LET'S TALK</a>
-      </div>
+        <div class="logo glow">
+            <a href="../index.html">ARSHIA SANDHU</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#skills">SKILLS</a></li>
+                <li><a href="../index.html#experience">EXPERIENCE</a></li>
+                <li><a href="../index.html#certificates">CERTIFICATES</a></li>
+                <li><a href="../index.html#projects">PROJECTS</a></li>
+                <li><a href="../index.html#blogs">BLOG</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="../index.html#contact" class="btn btn-primary">LET'S TALK</a>
+            <div class="mobile-toggle">&#9776;</div> 
+        </div>
     </div>
-  </header>
+</header>
 
   <div style="text-align: left;">
     <a href="../index.html" class="back-link">&larr; Back to Home</a>
@@ -924,47 +997,47 @@ padding: 5px;
   </footer>
 
   <script>
-    // ========================================
-    // MOBILE MENU TOGGLE
-    // ========================================
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.main-nav ul');
+    // // ========================================
+    // // MOBILE MENU TOGGLE
+    // // ========================================
+    // const mobileToggle = document.querySelector('.mobile-toggle');
+    // const navMenu = document.querySelector('.main-nav ul');
 
-    if (mobileToggle && navMenu) {
-      // Toggle menu on button click
-      mobileToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
+    // if (mobileToggle && navMenu) {
+    //   // Toggle menu on button click
+    //   mobileToggle.addEventListener('click', (e) => {
+    //     e.stopPropagation();
+    //     navMenu.classList.toggle('active');
         
-        // Change hamburger icon to X when menu is open
-        if (navMenu.classList.contains('active')) {
-          mobileToggle.innerHTML = '&times;';
-          mobileToggle.style.fontSize = '32px';
-        } else {
-          mobileToggle.innerHTML = '&#9776;';
-          mobileToggle.style.fontSize = '28px';
-        }
-      });
+    //     // Change hamburger icon to X when menu is open
+    //     if (navMenu.classList.contains('active')) {
+    //       mobileToggle.innerHTML = '&times;';
+    //       mobileToggle.style.fontSize = '32px';
+    //     } else {
+    //       mobileToggle.innerHTML = '&#9776;';
+    //       mobileToggle.style.fontSize = '28px';
+    //     }
+    //   });
 
-      // Close menu when clicking on any navigation link
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          mobileToggle.innerHTML = '&#9776;';
-          mobileToggle.style.fontSize = '28px';
-        });
-      });
+    //   // Close menu when clicking on any navigation link
+    //   const navLinks = navMenu.querySelectorAll('a');
+    //   navLinks.forEach(link => {
+    //     link.addEventListener('click', () => {
+    //       navMenu.classList.remove('active');
+    //       mobileToggle.innerHTML = '&#9776;';
+    //       mobileToggle.style.fontSize = '28px';
+    //     });
+    //   });
 
-      // Close menu when clicking outside of navigation
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.main-nav') && navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          mobileToggle.innerHTML = '&#9776;';
-          mobileToggle.style.fontSize = '28px';
-        }
-      });
-    }
+    //   // Close menu when clicking outside of navigation
+    //   document.addEventListener('click', (e) => {
+    //     if (!e.target.closest('.main-nav') && navMenu.classList.contains('active')) {
+    //       navMenu.classList.remove('active');
+    //       mobileToggle.innerHTML = '&#9776;';
+    //       mobileToggle.style.fontSize = '28px';
+    //     }
+    //   });
+    // }
 
     // ========================================
     // LIGHTBOX FUNCTIONALITY
@@ -1042,6 +1115,86 @@ padding: 5px;
       }
     });
 
+    // Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const mainNav = document.querySelector('.main-nav ul');
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+    // Toggle mobile menu
+    if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            
+            // Change hamburger icon to X when open
+            if (mainNav.classList.contains('active')) {
+                mobileToggle.innerHTML = '&times;';
+                mobileToggle.style.fontSize = '32px';
+            } else {
+                mobileToggle.innerHTML = '&#9776;';
+                mobileToggle.style.fontSize = '28px';
+            }
+        });
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                mobileToggle.innerHTML = '&#9776;';
+                mobileToggle.style.fontSize = '28px';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = mainNav.contains(event.target);
+            const isClickOnToggle = mobileToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                mobileToggle.innerHTML = '&#9776;';
+                mobileToggle.style.fontSize = '28px';
+            }
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add resize listener to handle menu state on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            mainNav.classList.remove('active'); // ERROR if mainNav is null
+            if (mobileToggle) {
+                mobileToggle.innerHTML = '&#9776;'; // ERROR if mobileToggle is null
+                mobileToggle.style.fontSize = '28px';
+            }
+        }
+    });
+
+    // Initialize AOS (Animate On Scroll) if available
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            offset: 50,
+            once: true
+        });
+    }
+});
     // ========================================
     // SMOOTH SCROLLING FOR ANCHOR LINKS
     // ========================================
