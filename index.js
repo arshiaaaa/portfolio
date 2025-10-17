@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add resize listener to handle menu state on window resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            mainNav.classList.remove('active');
+            mainNav.classList.remove('active'); // ERROR if mainNav is null
             if (mobileToggle) {
-                mobileToggle.innerHTML = '&#9776;';
+                mobileToggle.innerHTML = '&#9776;'; // ERROR if mobileToggle is null
                 mobileToggle.style.fontSize = '28px';
             }
         }
